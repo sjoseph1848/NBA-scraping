@@ -20,23 +20,17 @@ player = json.loads(nba_player)
 # print(player["_internal"]["pubDateTime"])
 #print(player["league"]["standard"]["stats"]["latest"]["seasonYear"])
 
-player_background = player["league"]["standard"][2]["collegeName"]
-# print(len(player_background))
-print(player_background)
+# player_background = player["league"]["standard"][2]["collegeName"]
+# # print(len(player_background))
+# print(player_background)
+college = []
+
+for item in player["league"]["standard"]:
+    # print(item["collegeName"])
+    collegeName = item["collegeName"]
+    college.append(collegeName)
 
 
-
-# print(d[])
-
-
-# with open("blog_data.csv","w") as csv_file:
-#     csv_writer = writer(csv_file)
-#     csv_writer.writerow(["title","link","date"])
-#     for article in articles:
-#         a_tag = article.find("a")
-#         title = a_tag.get_text()
-#         url = a_tag['href']
-#         date = article.find("time")["datetime"]
-#         # print(title,url,date)
-#         csv_writer.writerow([title,url,date])
+#print(college)
+print(len(college))
 
