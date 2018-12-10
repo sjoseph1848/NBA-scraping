@@ -23,14 +23,25 @@ player = json.loads(nba_player)
 # player_background = player["league"]["standard"][2]["collegeName"]
 # # print(len(player_background))
 # print(player_background)
-college = []
+# college = []
 
-for item in player["league"]["standard"]:
+with open("college_round1.csv","w") as csv_file:
+    csv_writer = writer(csv_file)
+    csv_writer.writerow(["firstName","lastName","collegeName","currentTeam","draftTeam","draftYear","yearsPro","position"])
+    for item in player["league"]["standard"]:
     # print(item["collegeName"])
-    collegeName = item["collegeName"]
-    college.append(collegeName)
+        firstName = item["firstName"]
+        lastName = item["lastName"]
+        collegeName = item["collegeName"]
+        currentTeam = item["teams"]
+        draftTeam = item["draft"]
+        draftYear = item["nbaDebutYear"]
+        yearsPro = item["yearsPro"]
+        position = item["pos"]
+        csv_writer.writerow([firstName,lastName,collegeName,currentTeam,draftTeam,draftYear,yearsPro,position])
 
 
 #print(college)
-print(len(college))
+# print(len(college))
+# print(college)
 
