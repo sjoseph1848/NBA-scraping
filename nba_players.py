@@ -24,7 +24,7 @@ player = json.loads(nba_player)
 # # print(len(player_background))
 # print(player_background)
 # college = []
-
+#test
 with open("college_round1.csv","w") as csv_file:
     csv_writer = writer(csv_file)
     csv_writer.writerow(["firstName","lastName","collegeName","currentTeam","draftTeam","draftYear","yearsPro","position"])
